@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), 'gcd.rb')
+require "./gcd"
 class Racional
 
 	include Comparable
