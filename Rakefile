@@ -1,0 +1,16 @@
+task :default => :bin
+
+desc "Ejecutar las espectativas de la clase Racional"
+task :bin do
+   sh "rspec -I. spec/math/racional_spec.rb"
+end
+
+desc "Ejecutar con documentacion"
+task :test do
+  sh "rspec -I. spec/math/racional_spec.rb --format documentation"
+end
+
+desc "Ejecutar con documentacion html"
+task :thtml do
+  sh "rspec -I. spec/math/racional_spec.rb --format html"
+end
