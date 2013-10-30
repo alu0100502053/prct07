@@ -6,7 +6,7 @@ class Racional
 
    def initialize(numerador, denominador)
       @numerador, @denominador = numerador, denominador
-      reducir
+      # reducir
    end
    def reducir
       mcd = gcd(@numerador, @denominador)
@@ -41,25 +41,38 @@ class Racional
       mcm = (@denominador * other.denominador)/gcd(@denominador, other.denominador)
       @numerador = ((mcm/@denominador*@numerador) + (mcm/other.denominador*other.numerador))
       @denominador = mcm
+      reducir
    end
    def -(other)
       mcm = (@denominador * other.denominador)/gcd(@denominador, other.denominador)
       @numerador = ((mcm/@denominador*@numerador) - (mcm/other.denominador*other.numerador))
       @denominador = mcm
+      reducir
    end
    def *(other)
       @numerador = @numerador * other.numerador
       @denominador = @denominador * other.denominador
+      reducir
    end
    def /(other)
       @numerador = @numerador * other.denominador
       @denominador = @denominador * other.numerador
+      reducir
    end
    def %(other)
       (@numerador/@denominador)%(other.numerador/other.denominador)
    end
    def <=>(other)
-   	@numerador <=> other.numerador
-   	@denominador <=> other.denominador
+      mcm = (@denominador * other.denominador)/gcd(@denominador, other.denominador)
+      a = (mcm/@denominador*@numerador)
+      b = (mcm/other.denominador*other.numerador)
+
+      if a < b
+         -1
+      elsif a > b
+         1
+      else
+         0
+      end
    end
 end

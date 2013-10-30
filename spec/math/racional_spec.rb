@@ -95,30 +95,30 @@ describe Racional do
       it "Se debe de poder comprobar si una fracion es menor que otra" do
          @f2 = Racional.new(1,3)
          @f3 = Racional.new(-16,2)
-         @f.menor(@f2).should be true
-         @f.menor(@f3).should be false
+         @f.<(@f2).should be true
+         @f.<(@f3).should be false
       end
       it "Se debe de poder comprobar si una fracion es mayor que otra" do
          @f2 = Racional.new(1,3)      
          @f3 = Racional.new(-16,2)
-         @f.mayor(@f2).should be false
-         @f.mayor(@f3).should be true
+         @f.>(@f2).should be false
+         @f.>(@f3).should be true
       end
       it "Se debe de poder comprobar si una fracion es menor o igual que otra" do
          @f2 = Racional.new(1,3)
          @f3 = Racional.new(-16,2)
          @f4 = Racional.new(-8,4)
-         @f.menorigual(@f2).should be true
-         @f.menorigual(@f3).should be false
-         @f.menorigual(@f4).should be true
+         @f.<=(@f2).should be true
+         @f.<=(@f3).should be false
+         @f.<=(@f4).should be true
       end
       it "Se debe de poder comprobar si una fracion es mayor o igual que otra" do
          @f2 = Racional.new(1,3)
          @f3 = Racional.new(-16,2)
          @f4 = Racional.new(-8,4)
-         @f.mayorigual(@f2).should be false
-         @f.mayorigual(@f3).should be true
-         @f.mayorigual(@f4).should be true
+         @f.>=(@f2).should be false
+         @f.>=(@f3).should be true
+         @f.>=(@f4).should be true
       end
    end
 end
