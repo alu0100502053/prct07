@@ -1,5 +1,4 @@
-#require File.join(File.dirname(__FILE__), "/../spec_helper")
-require "spec_helper"
+require "lib/math/racional.rb"
 
 describe Racional do
    before :each do
